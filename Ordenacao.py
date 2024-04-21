@@ -1,10 +1,18 @@
 class Ordenacao:
     def quickSort(self, lista, primeiraPosicao, ultimaPosicao):
-        pivo = lista[primeiraPosicao]
+
+        #pivo = lista[primeiraPosicao]
+
+        #Aqui é usado o metodo de escolha do pivô mediano de 3 ele é mais rápido do que escolher o primeiro ou o ultimo elemento da lista
+        
+        meio = (primeiraPosicao + ultimaPosicao) // 2
+        pivo = sorted([lista[primeiraPosicao], lista[meio], lista[ultimaPosicao]])[1]
+
         ponteiroEsquerda = primeiraPosicao
         ponteiroDireita = ultimaPosicao
 
         while ponteiroEsquerda <= ponteiroDireita:
+            
             while lista[ponteiroEsquerda] < pivo:
                 ponteiroEsquerda += 1
 
